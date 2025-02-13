@@ -1,1 +1,6 @@
-<h2 (click)="AddToFavourite(name)">{{name}}</h2>
+
+<div>
+    <h2>{{name}}</h2>
+    <button (click)="AddToFavourite(name)">Add to favourite</button>
+    <button  (click)="RemoveFavourite(name)">RemoveFavourite</button>
+</div>

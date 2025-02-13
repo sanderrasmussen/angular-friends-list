@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   newFriend: string | null = null;
   favorite: string | null = null;
+  favourites: string[] = [];
 
   people: string[] = ['lewis', 'jules', 'ed', 'nathan', 'dave', 'nigel'];
 
@@ -20,7 +21,20 @@ export class AppComponent {
   }
   addFavourite(name:string){
     console.log(name)
-    this.favorite=name
+    if(this.favourites.indexOf(name)===-1){
+      this.favorite=name //old redundancy for core, but did not remove 
+      this.favourites?.push(name)
+    }
+
+  }
+  removeFavourite(name :string){
+   
+    let i = this.favourites.indexOf(name)
+    if(i>-1){
+      this.favourites.splice(i,1);
+    }
+
+
   }
 
 }
